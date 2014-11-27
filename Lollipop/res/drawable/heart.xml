@@ -1,0 +1,15 @@
+<!-- res/drawable/heart.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="256dp"
+    android:viewportHeight="32"
+    android:viewportWidth="32"
+    android:width="256dp" >
+
+    <!-- draw a path -->
+    <path
+        android:fillColor="#8fff"
+        android:pathData="M27.5,17.5 v-15 a15,15 0 0,0 -15,15 z"
+        android:strokeColor="#f5ac"
+        android:strokeWidth="1" />
+
+</vector>
