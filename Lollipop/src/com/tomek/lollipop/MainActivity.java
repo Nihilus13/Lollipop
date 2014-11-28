@@ -1,11 +1,13 @@
 package com.tomek.lollipop;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Outline;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.transition.Explode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -53,9 +55,11 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				Intent intent = new Intent(MainActivity.this,
 						SecondActivity.class);
-				startActivity(intent);
+				startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
 			}
 		});
+		getWindow().setExitTransition(new Explode());
+
 	}
 
 	@Override

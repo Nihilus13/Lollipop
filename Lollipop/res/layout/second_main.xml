@@ -9,6 +9,16 @@
     tools:context="com.tomek.lollipop.MainActivity" >
 
     <ImageView
+        android:id="@+id/ror"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ror"
+        android:transitionName="ror" />
+
+    <ImageView
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

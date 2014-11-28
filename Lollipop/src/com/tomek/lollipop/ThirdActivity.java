@@ -45,4 +45,9 @@ public class ThirdActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	@Override
+	public void onBackPressed() {
+		finishAfterTransition();
+		super.onBackPressed();
+	}
 }

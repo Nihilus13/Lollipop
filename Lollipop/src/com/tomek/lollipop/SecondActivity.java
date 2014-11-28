@@ -3,19 +3,18 @@ package com.tomek.lollipop;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.graphics.Palette;
 import android.support.v7.graphics.Palette.PaletteAsyncListener;
 import android.support.v7.graphics.Palette.Swatch;
+import android.transition.Explode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,7 +24,6 @@ import android.view.ViewAnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class SecondActivity extends Activity {
 
@@ -65,12 +63,20 @@ public class SecondActivity extends Activity {
 
 			@Override
 			public boolean onLongClick(View v) {
+
+				ImageView rorImage = (ImageView) findViewById(R.id.ror);
 				Intent intent = new Intent(SecondActivity.this,
 						ThirdActivity.class);
-				startActivity(intent);
+				startActivity(
+						intent,
+						ActivityOptions.makeSceneTransitionAnimation(
+								SecondActivity.this, rorImage, "ror")
+								.toBundle());
 				return false;
 			}
 		});
+		getWindow().setExitTransition(new Explode());
+
 	}
 
 	PaletteAsyncListener listener = new PaletteAsyncListener() {
