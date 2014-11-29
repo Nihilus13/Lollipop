@@ -22,7 +22,6 @@ public class ThirdActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.third_main);
-		ImageView imageView = (ImageView) findViewById(R.id.image);
 
 	}
 

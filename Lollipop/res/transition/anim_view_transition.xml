@@ -5,7 +5,7 @@
 
     <fade android:fadingMode="fade_out" >
         <targets>
-            <target android:targetId="@id/image" />
+            <target android:targetId="@id/ror" />
         </targets>
     </fade>
 

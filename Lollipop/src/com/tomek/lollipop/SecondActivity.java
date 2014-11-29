@@ -35,7 +35,7 @@ public class SecondActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.second_main);
-		ImageView imageView = (ImageView) findViewById(R.id.image);
+		ImageView imageView = (ImageView) findViewById(R.id.ror);
 		drawableres = R.drawable.rajwajmen;
 		Bitmap bitmap = drawableToBitmap(imageView.getDrawable());
 		bitmap.setHasAlpha(true);
@@ -65,6 +65,15 @@ public class SecondActivity extends Activity {
 			public boolean onLongClick(View v) {
 
 				ImageView rorImage = (ImageView) findViewById(R.id.ror);
+				if (rorImage.getVisibility() == View.INVISIBLE) {
+					int radius = Math.max(rorImage.getWidth(), rorImage.getHeight());
+					Animator anim = ViewAnimationUtils.createCircularReveal(
+							rorImage, rorImage.getLeft(), rorImage.getTop(), 0,
+							radius);
+					rorImage.setVisibility(View.VISIBLE);
+					anim.start();
+					selected = true;
+				}
 				Intent intent = new Intent(SecondActivity.this,
 						ThirdActivity.class);
 				startActivity(
@@ -95,7 +104,7 @@ public class SecondActivity extends Activity {
 				swatches.addView(image);
 			}
 			((TextView) findViewById(R.id.test)).setTextColor(palette
-					.getLightVibrantSwatch().getTitleTextColor());
+					.getSwatches().get(0).getTitleTextColor());
 
 		}
 	};
@@ -105,7 +114,7 @@ public class SecondActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			if (!selected) {
-				View image2 = findViewById(R.id.image2);
+				View image2 = findViewById(R.id.ror);
 				int radius = Math.max(image2.getWidth(), image2.getHeight());
 				Animator anim = ViewAnimationUtils.createCircularReveal(image2,
 						image2.getLeft(), image2.getTop(), 0, radius);
@@ -113,7 +122,7 @@ public class SecondActivity extends Activity {
 				anim.start();
 				selected = true;
 			} else {
-				final View image2 = findViewById(R.id.image2);
+				final View image2 = findViewById(R.id.ror);
 				int initialRadius = image2.getWidth();
 				Animator animation = ViewAnimationUtils.createCircularReveal(
 						image2, image2.getRight() - image2.getLeft(),
