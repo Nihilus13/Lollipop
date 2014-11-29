@@ -4,16 +4,7 @@
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
-    <style name="AppBaseTheme" parent="android:Theme.Material"></style>
-
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <item name="android:windowBackground">@color/red</item>
-        <item name="android:colorPrimary">@android:color/transparent</item>
-        <item name="android:colorPrimaryDark">@android:color/transparent</item>
-        <item name="android:colorAccent">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@color/purple</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+    <style name="AppBaseTheme" parent="android:Theme.Material">
         <item name="android:windowContentTransitions">true</item>
         <!-- specify enter and exit transitions -->
         <item name="android:windowEnterTransition">@transition/explode</item>
@@ -21,6 +12,34 @@
         <!-- specify shared element transitions -->
         <item name="android:windowSharedElementEnterTransition">    @transition/anim_view_transition</item>
         <item name="android:windowSharedElementExitTransition">    @transition/anim_view_transition</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="MainActivity" parent="AppBaseTheme">
+        <item name="android:windowBackground">@color/red</item>
+        <item name="android:colorPrimary">@android:color/transparent</item>
+        <item name="android:colorPrimaryDark">@android:color/transparent</item>
+        <item name="android:colorAccent">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/purple</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="SecondActivity" parent="AppBaseTheme">
+        <item name="android:windowBackground">@color/orange</item>
+        <item name="android:colorPrimary">@color/yellow</item>
+        <item name="android:colorPrimaryDark">@android:color/transparent</item>
+        <item name="android:colorAccent">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/blue</item>
+        <item name="android:statusBarColor">@color/purple</item>
+    </style>
+
+    <style name="ThirdActivity" parent="AppBaseTheme">
+        <item name="android:windowBackground">@color/green</item>
+        <item name="android:colorPrimary">@color/yellow</item>
+        <item name="android:colorPrimaryDark">@android:color/transparent</item>
+        <item name="android:colorAccent">@color/orange</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@color/orange</item>
     </style>
 
 </resources>
