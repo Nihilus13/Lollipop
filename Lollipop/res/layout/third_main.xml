@@ -17,12 +17,11 @@
 
     <ImageView
         android:id="@+id/ror"
-        android:transitionName="ror"
         android:layout_width="400dp"
         android:layout_height="400dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_centerInParent="true"
-        android:src="@drawable/ror" />
+        android:src="@drawable/ror"
+        android:transitionName="ror" />
 
 </RelativeLayout>
