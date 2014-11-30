@@ -9,11 +9,11 @@
     tools:context="com.tomek.lollipop.MainActivity" >
 
     <ImageView
-        android:id="@+id/heart"
+        android:id="@+id/quarter"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:src="@drawable/heart" />
+        android:src="@drawable/animated_vector" />
 
     <ImageView
         android:id="@+id/ror"

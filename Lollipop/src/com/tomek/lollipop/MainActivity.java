@@ -14,15 +14,18 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewOutlineProvider;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
 	private Button mButton;
 	String[] myDataset = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23",
-			"24", "25", "26", "27", "28", "29", "30" };
+			"11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21",
+			"22", "23", "24", "25", "26", "27", "28", "29", "30" };
 
 	private RecyclerView recycler;
+	private ListView list;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +34,9 @@ public class MainActivity extends Activity {
 
 		mButton = (Button) findViewById(R.id.button);
 		recycler = (RecyclerView) findViewById(R.id.recycler);
-
+		list = (ListView) findViewById(R.id.list);
+		MyArrayAdapter myArrayAdapter = new MyArrayAdapter(this, 0, myDataset);
+		list.setAdapter(myArrayAdapter);
 		recycler.setHasFixedSize(true);
 
 		// use a linear layout manager
@@ -49,13 +54,24 @@ public class MainActivity extends Activity {
 
 			}
 		});
+		recycler.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(MainActivity.this, "?", Toast.LENGTH_SHORT)
+						.show();
+
+			}
+		});
 		mButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(MainActivity.this,
 						SecondActivity.class);
-				startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
+				startActivity(intent, ActivityOptions
+						.makeSceneTransitionAnimation(MainActivity.this)
+						.toBundle());
 			}
 		});
 		getWindow().setExitTransition(new Explode());
